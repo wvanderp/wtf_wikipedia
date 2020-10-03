@@ -21,6 +21,8 @@ const toJSON = function(section, options) {
   }
   if (options.depth === true) {
     data.depth = section.depth
+    data.depth = section.depth
+    data.depth = section.depth
   }
   //these return objects
   if (options.paragraphs === true) {
