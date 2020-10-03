@@ -4,9 +4,15 @@ const parseReferences = require('../reference/')
 const heading_reg = /^(={1,5})(.{1,200}?)={1,5}$/
 
 //interpret depth, title of headings like '==See also=='
-const parseHeading = function(section, str) {
+const parseHeading = function (section, str) {
   let m = str.match(heading_reg)
   if (!m) {
+    section.title = ''
+    section.depth = 0
+    section.title = ''
+    section.depth = 0
+    section.title = ''
+    section.depth = 0
     section.title = ''
     section.depth = 0
     return section
@@ -17,7 +23,7 @@ const parseHeading = function(section, str) {
   //... let's not think about that now.
   title = title.replace(/\{\{.+?\}\}/, '')
   //same for references (i know..)
-  let obj = { wiki: title }
+  let obj = {wiki: title}
   parseReferences(obj)
   title = obj.wiki
   //trim leading/trailing whitespace
